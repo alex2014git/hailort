@@ -1,0 +1,25 @@
+rm -rf ./hailort/external/DotWriter/.git
+rm -rf ./hailort/external/readerwriterqueue/.git
+rm -rf ./hailort/external/benchmark/.git
+rm -rf ./hailort/external/CLI11/.git
+rm -rf ./hailort/external/pybind11/.git
+rm -rf ./hailort/external/Catch2/.git
+rm -rf ./hailort/external/json/.git
+rm -rf ./hailort/external/spdlog/.git
+rm -rf ./hailort/external/pevents/.git
+rm -rf ./hailort/external/protobuf/third_party/benchmark/.git
+rm -rf ./hailort/external/protobuf/third_party/googletest/.git
+rm -rf ./hailort/external/protobuf/.git
+rm -rf ./hailort/external/benchmark/.github
+rm -rf ./hailort/external/CLI11/.github
+rm -rf ./hailort/external/pybind11/.github
+rm -rf ./hailort/external/Catch2/.github
+rm -rf ./hailort/external/json/.github
+rm -rf ./hailort/external/pevents/.github
+rm -rf ./hailort/external/protobuf/.github
+rm -rf ./build
+rm -rf ./hailort/libhailort/examples/build
+rm -rf ./hailort/pre_build/build
+rm -rf ./hailort/pre_build/install
+rm -rf ./hailort/pre_build/external/build/
+
