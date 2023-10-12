@@ -11,13 +11,13 @@ FetchContent_Declare(
     BINARY_DIR "${CMAKE_CURRENT_LIST_DIR}/pevents"
 )
 
-if(NOT HAILO_OFFLINE_COMPILATION)
+#if(NOT HAILO_OFFLINE_COMPILATION)
     # https://stackoverflow.com/questions/65527126/disable-install-for-fetchcontent
     FetchContent_GetProperties(pevents)
     if(NOT pevents_POPULATED)
         FetchContent_Populate(pevents)
     endif()
-endif()
+    #endif()
 
 if(NOT TARGET pevents)
     add_library(pevents STATIC EXCLUDE_FROM_ALL ${pevents_SOURCE_DIR}/src/pevents.cpp)

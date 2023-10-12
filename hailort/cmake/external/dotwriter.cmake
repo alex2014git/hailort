@@ -11,13 +11,13 @@ FetchContent_Declare(
     BINARY_DIR "${CMAKE_CURRENT_LIST_DIR}/dotwriter"
 )
 
-if(NOT HAILO_OFFLINE_COMPILATION)
+#if(NOT HAILO_OFFLINE_COMPILATION)
     # https://stackoverflow.com/questions/65527126/disable-install-for-fetchcontent
     FetchContent_GetProperties(dotwriter)
     if(NOT dotwriter_POPULATED)
         FetchContent_Populate(dotwriter)
         add_subdirectory(${dotwriter_SOURCE_DIR} ${dotwriter_BINARY_DIR} EXCLUDE_FROM_ALL)
     endif()
-else()
-    add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/dotwriter EXCLUDE_FROM_ALL)
-endif()
+    #else()
+    #add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/dotwriter EXCLUDE_FROM_ALL)
+    #endif()

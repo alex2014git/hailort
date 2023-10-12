@@ -15,13 +15,13 @@ FetchContent_Declare(
     BINARY_DIR "${CMAKE_CURRENT_LIST_DIR}/benchmark"
 )
 
-if(NOT HAILO_OFFLINE_COMPILATION)
+#if(NOT HAILO_OFFLINE_COMPILATION)
     # https://stackoverflow.com/questions/65527126/disable-install-for-fetchcontent
     FetchContent_GetProperties(benchmark)
     if(NOT benchmark_POPULATED)
         FetchContent_Populate(benchmark)
         add_subdirectory(${benchmark_SOURCE_DIR} ${benchmark_BINARY_DIR} EXCLUDE_FROM_ALL)
     endif()
-else()
-    add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/benchmark EXCLUDE_FROM_ALL)
-endif()
+    #else()
+    #add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/benchmark EXCLUDE_FROM_ALL)
+    #endif()

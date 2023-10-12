@@ -11,13 +11,13 @@ FetchContent_Declare(
     BINARY_DIR "${CMAKE_CURRENT_LIST_DIR}/catch2"
 )
 
-if(NOT HAILO_OFFLINE_COMPILATION)
+#if(NOT HAILO_OFFLINE_COMPILATION)
     # https://stackoverflow.com/questions/65527126/disable-install-for-fetchcontent
     FetchContent_GetProperties(catch2)
     if(NOT catch2_POPULATED)
         FetchContent_Populate(catch2)
         add_subdirectory(${catch2_SOURCE_DIR} ${catch2_BINARY_DIR} EXCLUDE_FROM_ALL)
     endif()
-else()
-    add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/catch2 EXCLUDE_FROM_ALL)
-endif()
+    #else()
+    #add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/catch2 EXCLUDE_FROM_ALL)
+    #endif()

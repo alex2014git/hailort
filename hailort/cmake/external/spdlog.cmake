@@ -11,14 +11,14 @@ FetchContent_Declare(
     BINARY_DIR "${CMAKE_CURRENT_LIST_DIR}/spdlog"
 )
 
-if(NOT HAILO_OFFLINE_COMPILATION)
+#if(NOT HAILO_OFFLINE_COMPILATION)
     # https://stackoverflow.com/questions/65527126/disable-install-for-fetchcontent
     FetchContent_GetProperties(spdlog)
     if(NOT spdlog_POPULATED)
         FetchContent_Populate(spdlog)
         add_subdirectory(${spdlog_SOURCE_DIR} ${spdlog_BINARY_DIR} EXCLUDE_FROM_ALL)
     endif()
-else()
-    add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/spdlog EXCLUDE_FROM_ALL)
-endif()
+    #else()
+    #add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/spdlog EXCLUDE_FROM_ALL)
+    #endif()
 set_target_properties(spdlog PROPERTIES POSITION_INDEPENDENT_CODE ON)

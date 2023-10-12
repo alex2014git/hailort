@@ -23,13 +23,13 @@ FetchContent_Declare(
     BINARY_DIR "${CMAKE_CURRENT_LIST_DIR}/pybind11"
 )
 
-if(NOT HAILO_OFFLINE_COMPILATION)
+#if(NOT HAILO_OFFLINE_COMPILATION)
     # https://stackoverflow.com/questions/65527126/disable-install-for-fetchcontent
     FetchContent_GetProperties(pybind11)
     if(NOT pybind11_POPULATED)
         FetchContent_Populate(pybind11)
         add_subdirectory(${pybind11_SOURCE_DIR} ${pybind11_BINARY_DIR} EXCLUDE_FROM_ALL)
     endif()
-else()
-    add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/pybind11 EXCLUDE_FROM_ALL)
-endif()
+    #else()
+    #add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/pybind11 EXCLUDE_FROM_ALL)
+    #endif()
