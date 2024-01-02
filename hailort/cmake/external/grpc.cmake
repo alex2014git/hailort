@@ -44,7 +44,7 @@ if(NOT grpc_POPULATED)
             # ('formal' options are to let grpc recompile it which causes a name conflict,
             # or let it use find_package and take the risk it will use a different installed lib)
             set(gRPC_PROTOBUF_PROVIDER "hack" CACHE STRING "Provider of protobuf library")
-            add_subdirectory(${grpc_SOURCE_DIR} ${grpc_BINARY_DIR} EXCLUDE_FROM_ALL)
+            add_subdirectory(${HAILO_EXTERNAL_DIR}/grpc-src ${grpc_BINARY_DIR} EXCLUDE_FROM_ALL)
         endif()
     endif()
 endif()

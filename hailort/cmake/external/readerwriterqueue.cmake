@@ -18,6 +18,6 @@ if(NOT readerwriterqueue_POPULATED)
     if (NOT HAILO_EXTERNALS_EXCLUDE_TARGETS)
         # Add readerwriterqueue as a header-only library
         add_library(readerwriterqueue INTERFACE)
-        target_include_directories(readerwriterqueue INTERFACE ${readerwriterqueue_SOURCE_DIR})
+        target_include_directories(readerwriterqueue INTERFACE ${HAILO_EXTERNAL_DIR}/readerwriterqueue-src)
     endif()
 endif()

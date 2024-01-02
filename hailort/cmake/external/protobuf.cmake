@@ -52,7 +52,8 @@ if(NOT protobuf_POPULATED)
         set(protobuf_BUILD_PROTOC_BINARIES OFF CACHE BOOL "Build libprotoc and protoc compiler" FORCE)
         set(protobuf_MSVC_STATIC_RUNTIME OFF CACHE BOOL "Protobuf MSVC static runtime" FORCE)
         set(protobuf_WITH_ZLIB OFF CACHE BOOL "Compile protobuf with zlib" FORCE)
-        add_subdirectory(${protobuf_SOURCE_DIR} ${protobuf_BINARY_DIR} EXCLUDE_FROM_ALL)
+
+        add_subdirectory(${HAILO_EXTERNAL_DIR}/protobuf-src ${protobuf_BINARY_DIR} EXCLUDE_FROM_ALL)
 
         if(NOT MSVC)
             set_target_properties(libprotobuf PROPERTIES POSITION_INDEPENDENT_CODE ON)
